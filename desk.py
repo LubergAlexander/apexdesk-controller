@@ -20,7 +20,7 @@ def B():
 
 @app.route('/height')
 def height():
-  return desk.desk_height
+  return str(desk.desk_height)
 
 
 if __name__ == '__main__':
