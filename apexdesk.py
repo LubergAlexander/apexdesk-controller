@@ -49,10 +49,10 @@ class ApexDesk(object):
 
     def handleNotification(self, handle, data):
       if handle == self.HEIGHT_NOTIFICATION_HANDLE:
-        match = self.HEIGHT_REGEX.match(data)
+        matches = self.HEIGHT_REGEX.match(data)
 
-        if match:
-          self.parent.desk_height = float(data[1])
+        if matches:
+          self.parent.desk_height = float(matches.group(1))
 
   def __init__(self, scanning_timeout=20, *args, **kwargs):
     self.lock = Lock()
