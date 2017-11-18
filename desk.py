@@ -3,7 +3,7 @@ from apexdesk import ApexDesk
 from threading import Thread
 
 app = Flask(__name__)
-desk = ApexDesk()
+desk = ApexDesk(scanning_timeout=30)
 
 
 @app.route('/A')

@@ -64,7 +64,7 @@ class ApexDesk(object):
 
     super().__init__(*args, **kwargs)
 
-  @retry(Exception, tries=6, delay=0, backoff=0, logger=log)
+  @retry(Exception, tries=10, delay=0, backoff=0, logger=log)
   def __discover_address(self):
     scanner = btle.Scanner().withDelegate(self.InnerScanner(parent=self))
     scanner.scan(self.scanning_timeout)
